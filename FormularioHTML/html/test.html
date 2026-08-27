@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica de formularios HTML</title>
+    <style>
+        /* Estos estilos solo ayudan a leer y probar los ejemplos. */
+        body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            color: #243447;
+            background: #f4f7f9;
+        }
+
+        h1 {
+            color: #0b5d5e;
+        }
+
+        fieldset {
+            margin: 20px 0;
+            padding: 18px;
+            border: 2px solid #b8d8d8;
+            border-radius: 8px;
+            background: white;
+        }
+
+        legend {
+            padding: 0 8px;
+            font-weight: bold;
+            color: #0b5d5e;
+        }
+
+        .campo {
+            margin: 14px 0;
+        }
+
+        label,
+        .titulo-campo {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea,
+        button {
+            box-sizing: border-box;
+            max-width: 100%;
+            padding: 8px;
+            font: inherit;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 6px;
+        }
+
+        input[type="color"] {
+            width: 70px;
+            height: 40px;
+            padding: 2px;
+        }
+
+        .opcion {
+            display: inline-block;
+            margin: 4px 12px 4px 0;
+            font-weight: normal;
+        }
+
+        button,
+        input[type="submit"],
+        input[type="reset"] {
+            margin: 6px 6px 6px 0;
+            border: 0;
+            border-radius: 4px;
+            color: white;
+            background: #0b5d5e;
+            cursor: pointer;
+        }
+
+        input[type="reset"] {
+            background: #69777d;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Practica de formularios HTML</h1>
+    <p>Explora cada control, completa los campos y pulsa los botones para observar su comportamiento.</p>
+
+    <!-- form agrupa los controles y permite enviar sus datos. -->
+    <form action="#resultado" method="post" enctype="multipart/form-data">
+        <!-- hidden no se ve, pero envia un dato fijo junto con el formulario. -->
+        <input type="hidden" name="actividad" value="formulario-html">
+
+        <!-- fieldset agrupa campos relacionados y legend le coloca un titulo. -->
+        <fieldset>
+            <legend>Datos basicos</legend>
+
+            <div class="campo">
+                <!-- label relaciona un texto con el control cuyo id indica for. -->
+                <label for="nombre">input type="text" - Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+            </div>
+
+            <div class="campo">
+                <!-- email valida que el valor tenga formato de correo. -->
+                <label for="correo">input type="email" - Correo:</label>
+                <input type="email" id="correo" name="correo" placeholder="nombre@ejemplo.com">
+            </div>
+
+            <div class="campo">
+                <!-- password oculta los caracteres escritos. -->
+                <label for="clave">input type="password" - Contraseña:</label>
+                <input type="password" id="clave" name="clave" minlength="6">
+            </div>
+
+            <div class="campo">
+                <!-- tel esta pensado para numeros telefonicos. -->
+                <label for="telefono">input type="tel" - Telefono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="300 123 4567">
+            </div>
+
+            <div class="campo">
+                <!-- search representa una caja de busqueda. -->
+                <label for="busqueda">input type="search" - Buscar:</label>
+                <input type="search" id="busqueda" name="busqueda" placeholder="Buscar un tema">
+            </div>
+
+            <div class="campo">
+                <!-- url valida una direccion web, normalmente con https://. -->
+                <label for="sitio">input type="url" - Sitio web:</label>
+                <input type="url" id="sitio" name="sitio" placeholder="https://ejemplo.com">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Opciones</legend>
+
+            <div class="campo">
+                <!-- checkbox permite seleccionar ninguna, una o varias opciones. -->
+                <span class="titulo-campo">input type="checkbox" - Lenguajes conocidos:</span>
+                <label class="opcion"><input type="checkbox" name="lenguaje" value="html"> HTML</label>
+                <label class="opcion"><input type="checkbox" name="lenguaje" value="css"> CSS</label>
+                <label class="opcion"><input type="checkbox" name="lenguaje" value="javascript"> JavaScript</label>
+            </div>
+
+            <div class="campo">
+                <!-- Los radio con el mismo name forman un grupo de opcion unica. -->
+                <span class="titulo-campo">input type="radio" - Nivel:</span>
+                <label class="opcion"><input type="radio" name="nivel" value="inicial"> Inicial</label>
+                <label class="opcion"><input type="radio" name="nivel" value="medio"> Medio</label>
+                <label class="opcion"><input type="radio" name="nivel" value="avanzado"> Avanzado</label>
+            </div>
+
+            <div class="campo">
+                <!-- number acepta numeros y puede limitarse con min, max y step. -->
+                <label for="horas">input type="number" - Horas de estudio:</label>
+                <input type="number" id="horas" name="horas" min="1" max="20" step="1" value="5">
+            </div>
+
+            <div class="campo">
+                <!-- range muestra un control deslizante para elegir un valor. -->
+                <label for="interes">input type="range" - Interes (0 a 10):</label>
+                <input type="range" id="interes" name="interes" min="0" max="10" value="7">
+            </div>
+
+            <div class="campo">
+                <!-- select muestra una lista; option representa cada alternativa. -->
+                <label for="editor">select y option - Editor preferido:</label>
+                <select id="editor" name="editor">
+                    <option value="vscode">Visual Studio Code</option>
+                    <option value="notepad">Bloc de notas</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <!-- optgroup organiza options dentro de grupos con una etiqueta. -->
+                <label for="color-web">optgroup - Color para una pagina:</label>
+                <select id="color-web" name="color_web">
+                    <optgroup label="Colores claros">
+                        <option value="blanco">Blanco</option>
+                        <option value="amarillo">Amarillo</option>
+                    </optgroup>
+                    <optgroup label="Colores oscuros">
+                        <option value="azul">Azul</option>
+                        <option value="verde">Verde</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="campo">
+                <!-- datalist ofrece sugerencias, pero tambien permite escribir otro valor. -->
+                <label for="pais">datalist y option - Pais:</label>
+                <input list="paises" id="pais" name="pais">
+                <datalist id="paises">
+                    <option value="Colombia"></option>
+                    <option value="Mexico"></option>
+                    <option value="Espana"></option>
+                </datalist>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Fecha y archivos</legend>
+
+            <!-- Estos tipos de input proporcionan controles especializados para fechas y horas. -->
+            <div class="campo">
+                <label for="fecha">input type="date" - Fecha:</label>
+                <input type="date" id="fecha" name="fecha">
+            </div>
+
+            <div class="campo">
+                <label for="hora">input type="time" - Hora:</label>
+                <input type="time" id="hora" name="hora">
+            </div>
+
+            <div class="campo">
+                <label for="fecha-hora">input type="datetime-local" - Fecha y hora:</label>
+                <input type="datetime-local" id="fecha-hora" name="fecha_hora">
+            </div>
+
+            <div class="campo">
+                <label for="mes">input type="month" - Mes:</label>
+                <input type="month" id="mes" name="mes">
+            </div>
+
+            <div class="campo">
+                <label for="semana">input type="week" - Semana:</label>
+                <input type="week" id="semana" name="semana">
+            </div>
+
+            <div class="campo">
+                <!-- color abre el selector de color del navegador. -->
+                <label for="color">input type="color" - Color favorito:</label>
+                <input type="color" id="color" name="color" value="#0b5d5e">
+            </div>
+
+            <div class="campo">
+                <!-- file permite seleccionar un archivo del dispositivo. -->
+                <label for="archivo">input type="file" - Archivo:</label>
+                <input type="file" id="archivo" name="archivo">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Mensaje y acciones</legend>
+
+            <!-- textarea sirve para textos largos y puede tener varias filas. -->
+            <div class="campo">
+                <label for="comentario">textarea - Comentario:</label>
+                <textarea id="comentario" name="comentario" rows="5" cols="45"
+                    placeholder="Escribe lo que aprendiste..."></textarea>
+            </div>
+
+            <!-- submit envia el formulario; reset devuelve los campos a su estado inicial. -->
+            <input type="submit" value="input type=submit - Enviar">
+            <input type="reset" value="input type=reset - Limpiar">
+
+            <!-- button es un boton flexible; su accion se define con type o JavaScript. -->
+            <button type="button" onclick="alert('Este es un button independiente')">button - Probar</button>
+
+            <!-- input type=image es un boton de envio representado por una imagen. -->
+            <input type="image" src="image01.jpg" alt="input type=image - Enviar con imagen" width="100" height="40">
+        </fieldset>
+    </form>
+
+    <p id="resultado">Al enviar, el navegador validara los campos y procesara el formulario.</p>
+</body>
+
+</html>

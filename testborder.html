@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de propiedades de fondo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;prueba6
+            font-family: Arial, sans-serif;
+            color: #17202a;
+        }
+
+        input,
+        select,
+        textarea,
+        button {
+            font: inherit;
+        }
+
+        .bloque {
+            width: 100%;
+            min-height: 400px;
+            padding: 48px 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .bloque h2 {
+            margin: 0 0 16px;
+            font-size: 2rem;
+        }
+
+        .bloque p {
+            max-width: 650px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .bloque-1 {
+            background-color: #f4d03f;
+            color: #7b241c;
+        }
+
+        .bloque-2 {
+            background-color: #d6eaf8;
+            background-image: url("https://image.pollinations.ai/prompt/Dragon%20Ball%20Z%20anime%20energy%20landscape%20orange%20blue?width=1200&height=800&nologo=true");
+            background-repeat: repeat;
+            background-size: 260px auto;
+        }
+
+        .bloque-3 {
+            color: white;
+            background-image:
+                linear-gradient(rgba(20, 70, 90, 0.58), rgba(20, 70, 90, 0.58)),
+                url("https://image.pollinations.ai/prompt/Dragon%20Ball%20Z%20anime%20warrior%20silhouette%20blue%20sky?width=1600&height=900&nologo=true");
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: cover;
+        }
+
+        .bloque-4 {
+            min-height: 1500px;
+            color: white;
+            background-color: #1b4f72;
+            background-image:
+                linear-gradient(rgba(27, 79, 114, 0.45), rgba(27, 79, 114, 0.45)),
+                url("https://image.pollinations.ai/prompt/Dragon%20Ball%20Z%20anime%20battle%20mountains%20golden%20energy?width=1600&height=1000&nologo=true");
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .formulario {
+            width: min(100%, 760px);
+            margin-top: 28px;
+            padding: 24px;
+            color: #17202a;
+            background: rgba(255, 255, 255, 0.92);
+            border: 3px solid #f39c12;
+            border-radius: 8px;
+        }
+
+        .formulario h3 {
+            margin: 0 0 18px;
+            color: #c0392b;
+        }
+
+        .campo {
+            display: grid;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+
+        .campo label {
+            font-weight: bold;
+        }
+
+        .campo input,
+        .campo select,
+        .campo textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #aab7b8;
+            border-radius: 4px;
+        }
+
+        .campo textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .pruebas-borde {
+            margin: 22px 0 8px;
+            padding-top: 18px;
+            border-top: 2px solid #f39c12;
+            overflow: auto;
+        }
+
+        .pruebas-borde h4 {
+            margin: 0 0 14px;
+            color: #c0392b;
+        }
+
+        .prueba {
+            float: left;
+            width: calc(50% - 8px);
+            margin: 0 16px 14px 0;
+        }
+
+        .prueba:nth-of-type(odd) {
+            margin-right: 0;
+        }
+
+        .prueba label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .prueba input {
+            width: 100%;
+            height: 40px;
+            padding: 7px 9px;
+            background: #fdfefe;
+        }
+
+        .prueba-1 input {
+            border: 1px solid #17202a;
+            border-radius: 0;
+        }
+
+        .prueba-2 input {
+            border: 3px solid #e74c3c;
+            border-radius: 4px;
+        }
+
+        .prueba-3 input {
+            border: 4px dashed #2980b9;
+            border-radius: 8px;
+        }
+
+        .prueba-4 input {
+            border: 2px dotted #27ae60;
+            border-radius: 12px;
+        }
+
+        .prueba-5 input {
+            border: 5px double #8e44ad;
+            border-radius: 2px;
+        }
+
+        .prueba-6 input {
+            border: 2px solid #f39c12;
+            border-radius: 20px;
+            height: 48px;
+        }
+
+        .prueba-7 input {
+            border: 0;
+            border-bottom: 3px solid #16a085;
+            border-radius: 0;
+        }
+
+        .prueba-8 input {
+            width: 80%;
+            border: 3px groove #7f8c8d;
+            border-radius: 6px;
+        }
+
+        .prueba-9 input {
+            height: 56px;
+            border: 6px ridge #d35400;
+            border-radius: 10px;
+        }
+
+        .prueba-10 input {
+            border: 2px inset #34495e;
+            border-radius: 16px;
+            background: #ecf0f1;
+        }
+
+        .formulario button {
+            padding: 11px 18px;
+            color: white;
+            background: #e67e22;
+            border: 0;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .etiqueta {
+            width: fit-content;
+            padding: 8px 12px;
+            border: 2px solid currentColor;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="bloque bloque-1">
+        <span class="etiqueta">Bloque 1</span>
+        <h2>Color del texto y del fondo</h2>
+        <p>El texto utiliza un color distinto al fondo. En este bloque se prueban las propiedades <strong>color</strong>
+            y <strong>background-color</strong>.</p>
+    </section>
+
+    <section class="bloque bloque-2">
+        <span class="etiqueta">Bloque 2</span>
+        <h2>Imagen de fondo en mosaico</h2>
+        <p>La imagen se repite horizontal y verticalmente mediante <strong>background-repeat: repeat</strong>. También
+            se modificó su tamaño para hacer visible el mosaico.</p>
+    </section>
+
+    <section class="bloque bloque-3">
+        <span class="etiqueta">Bloque 3</span>
+        <h2>Imagen a la derecha y semitransparente</h2>
+        <p>La imagen se ubica a la derecha con <strong>background-position</strong>. Una capa de color con transparencia
+            permite observar el efecto semitransparente.</p>
+    </section>
+
+    <section class="bloque bloque-4">
+        <span class="etiqueta">Bloque 4</span>
+        <h2>Desplazamiento de la imagen de fondo</h2>
+        <p>Este bloque mide 1500px de alto. Desplácese por la página para observar el efecto de
+            <strong>background-attachment: fixed</strong>.
+        </p>
+
+        <form class="formulario">
+            <h3>Únete al entrenamiento Z</h3>
+            <div class="campo">
+                <label for="nombre">Nombre de guerrero</label>
+                <input id="nombre" name="nombre" type="text" placeholder="Goku" required>
+            </div>
+            <div class="campo">
+                <label for="correo">Correo electrónico</label>
+                <input id="correo" name="correo" type="email" placeholder="guerrero@capsulecorp.com" required>
+            </div>
+            <div class="campo">
+                <label for="transformacion">Transformación favorita</label>
+                <select id="transformacion" name="transformacion">
+                    <option>Super Saiyajin</option>
+                    <option>Super Saiyajin 2</option>
+                    <option>Super Saiyajin 3</option>
+                    <option>Fusión</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Escribe tu técnica especial"></textarea>
+            </div>
+
+            <div class="pruebas-borde">
+                <h4>Diez pruebas de bordes y tamaños</h4>
+                <div class="prueba prueba-1">
+                    <label for="prueba1">Borde sólido fino</label>
+                    <input id="prueba1" name="prueba1" type="text" placeholder="Prueba 1">
+                </div>
+                <div class="prueba prueba-2">
+                    <label for="prueba2">Borde rojo grueso</label>
+                    <input id="prueba2" name="prueba2" type="text" placeholder="Prueba 2">
+                </div>
+                <div class="prueba prueba-3">
+                    <label for="prueba3">Borde discontinuo</label>
+                    <input id="prueba3" name="prueba3" type="text" placeholder="Prueba 3">
+                </div>
+                <div class="prueba prueba-4">
+                    <label for="prueba4">Borde punteado</label>
+                    <input id="prueba4" name="prueba4" type="text" placeholder="Prueba 4">
+                </div>
+                <div class="prueba prueba-5">
+                    <label for="prueba5">Borde doble</label>
+                    <input id="prueba5" name="prueba5" type="text" placeholder="Prueba 5">
+                </div>
+                <div class="prueba prueba-6">
+                    <label for="prueba6">Borde redondo alto</label>
+                    <input id="prueba6" name="prueba6" type="text" placeholder="Prueba 6">
+                </div>
+                <div class="prueba prueba-7">
+                    <label for="prueba7">Solo borde inferior</label>
+                    <input id="prueba7" name="prueba7" type="text" placeholder="Prueba 7">
+                </div>
+                <div class="prueba prueba-8">
+                    <label for="prueba8">Ancho reducido</label>
+                    <input id="prueba8" name="prueba8" type="text" placeholder="Prueba 8">
+                </div>
+                <div class="prueba prueba-9">
+                    <label for="prueba9">Borde elevado alto</label>
+                    <input id="prueba9" name="prueba9" type="text" placeholder="Prueba 9">
+                </div>
+                <div class="prueba prueba-10">
+                    <label for="prueba10">Borde interior redondo</label>
+                    <input id="prueba10" name="prueba10" type="text" placeholder="Prueba 10">
+                </div>
+            </div>
+            <button type="submit">Enviar registro</button>
+        </form>
+    </section>
+</body>
+
+</html>

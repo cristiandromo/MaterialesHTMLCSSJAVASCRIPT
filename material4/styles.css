@@ -1,0 +1,24 @@
+* {
+    font-family: 'Franklin Gothic Medium',
+    'Arial Narrow',
+    Arial, sans-serif;
+
+}
+label {
+    color: blue;
+}
+input {
+    background-color: lightblue;
+}
+
+.primero {
+   color:red;
+}
+#border_fieldset {
+    border: 3px solid purple;
+}
+
+#border_fieldset p label {font-size: 20px;}
+
+
+

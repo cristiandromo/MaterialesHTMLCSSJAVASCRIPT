@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get">
+<fieldset>
+    <legend>Formulario de contacto</legend>
+<p>
+<label for="peti">
+    Escribe aqui tu peticion
+</label>
+<input type="text" name ="mensaje" autocomplete="off">
+</p>
+
+<p> Ingrese correo electronico
+    <input type="email" name="correo">
+</p>
+<p> ingrese edad
+    <input type="number" name="edad" min="18" max="99">
+</p>
+
+</fieldset>
+<p>
+    <input type="submit" value="Enviar">
+</p>
+
+<p>
+    <select name="pais">
+        <option value="es">España</option>
+        <option value="mx" selected>México</option>
+        <option value="co">Colombia</option>
+    </select>
+</p>
+
+<button style=" border-radius: 20%;background-color: salmon; border-color: blue "  type="button"  onclick="alert('Boton presionado') " >
+    <span>Haz clic</span>
+<img src="image01.jpg" alt="imagen"  width="50" height="50">
+
+</button>
+
+<select name="pais" size="1">
+    <option value="xx">Elija un país ...</option>
+
+    <optgroup label="América">
+        <option value="ar">Argentina</option>
+        <option value="mx">México</option>
+        <option value="co">Colombia</option>
+    </optgroup>
+
+    <optgroup label="Europa" disabled>
+        <option value="es">España</option>
+        <option value="fr">Francia</option>
+        <option value="it">Italia</option>
+    </optgroup>
+</select>
+
+<p>
+    <input type="submit" value="Enviar">
+</p>
+<p>Elegir memoria USB:<input list="listaUsb"></p>
+<datalist id="listaUsb">
+    <option value="8">
+    <option value="16">
+    <option value="32">
+    <option value="64">
+</datalist>
+
+<textarea name="area" cols="30" rows="5" minlength="6"
+ maxlength="200">Escriba su mensaje aquí...</textarea>
+<p>
+   No hagas click -> <input type="submit" value="No hacer click" disabled >
+</p>
+<progress value="70" max="100">60%</progress>
+<meter value=".75" min="0" max="1">75%</meter>
+<meter value="85" min="0" max="100" low="40" high="80" optimum="100">85 puntos</meter>
+<meter value="250" min="0" max="500" optimum="300">250/500</meter>
+
+</form>
+</body>
+</html>

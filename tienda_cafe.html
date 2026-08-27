@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Rincón del Café</title>
+    <style> * { border: 1px solid blue; }
+
+       h1 {
+    font-style: italic;}
+        section { border: 1px solid red; height: 70vh; }
+        article { border: 1px dashed purple; }
+        #inicio { background-color: rgb(59, 59, 174); }
+        nav > ul > li { display: inline ; margin-right: 40px; }
+        #menu { background-color: rgb(59, 174, 59); }
+        #historia { background-color: rgb(174, 59, 59); }
+        #blog { background-color: rgb(174, 174, 59); }
+        #contacto { background-color: rgb(59, 174, 174); }
+        aside { position: absolute; left: 500px; background-color: blue;}
+
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1> El Rincón del Café</h1>
+        <p><em>Donde cada taza cuenta una historia</em></p>
+
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#menu">Nuestro Menú</a></li>
+                <li><a href="#historia">Nuestra Historia</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="inicio">
+            <h2>Bienvenidos a El Rincón del Café</h2>
+
+            <p>
+                Desde 2015, nos dedicamos a ofrecer la experiencia del café de especialidad
+                en un ambiente acogedor. Nuestros granos provienen de pequeñas fincas en
+                Colombia, Etiopía y Guatemala, tostados artesanalmente cada semana.
+            </p>
+
+            <p>
+                Ya sea que busques un espresso intenso para empezar el día o un capuchino
+                cremoso para una tarde de lectura, aquí encontrarás tu lugar.
+            </p>
+        </section>
+
+        <section id="menu">
+            <h2>Nuestro Menú</h2>
+
+            <article>
+                <h3>Espresso Italiano</h3>
+
+                <p><strong>Intensidad:</strong> Alta | <strong>Notas:</strong> Chocolate negro, avellana</p>
+
+                <p>
+                    Extraído en 25 segundos con una crema dorada y persistente. El equilibrio
+                    perfecto entre acidez y amargor. Ideal para los amantes del café puro y sin adornos.
+                </p>
+
+                <p><strong>Precio:</strong> $2.50</p>
+            </article>
+
+            <article>
+                <h3>Capuchino Clásico</h3>
+
+                <p><strong>Intensidad:</strong> Media | <strong>Notas:</strong> Caramelo, vainilla</p>
+
+                <p>
+                    Tercio de espresso, tercio de leche vaporizada y tercio de espuma
+                    microtexturizada. Decorado con un dibujo de hoja en la superficie.
+                    Nuestro más pedido desde la apertura.
+                </p>
+
+                <p><strong>Precio:</strong> $3.75</p>
+            </article>
+
+            <article>
+                <h3>Cold Brew de la Casa</h3>
+
+                <p><strong>Intensidad:</strong> Suave | <strong>Notas:</strong> Frutas tropicales, miel</p>
+
+                <p>
+                    Macerado durante 18 horas en agua fría para extraer los sabores más dulces
+                    del grano. Servido con hielo y una rodaja de naranja. Perfecto para los días calurosos.
+                </p>
+
+                <p><strong>Precio:</strong> $4.00</p>
+            </article>
+        </section>
+
+        <section id="historia">
+            <h2>Nuestra Historia</h2>
+
+            <p>
+                Todo comenzó en un pequeño garaje en el barrio de Gràcia, Barcelona.
+                María y Carlos, dos apasionados del café, decidieron dejar sus trabajos
+                corporativos para perseguir un sueño: crear un espacio donde el café fuera el protagonista.
+            </p>
+
+            <p>
+                Hoy, nuestra cafetería ha crecido, pero mantenemos la misma filosofía:
+                calidad sobre cantidad, personas sobre beneficios y
+                <mark>pasión por el café.</mark>
+            </p>
+
+            <figure>
+                <img src="cafeteria.jpg" alt="cafetería con mesas de madera"
+                    width="200" height="200">
+
+                <figcaption>
+                    Nuestra cafeteria.
+                </figcaption>
+            </figure>
+        </section>
+
+        <section id="blog">
+            <h2>Blog</h2>
+
+            <article>
+                <header>
+                    <h3>¿Cómo elegir tu método de extracción?</h3>
+
+                    <p>
+                        <time datetime="2026-05-28">28 de mayo de 2026</time> |
+                        Autor: Carlos Barista
+                    </p>
+                </header>
+
+                <p>
+                    V60, Chemex, AeroPress, French Press... ¿Te resultan familiares?
+                    Cada método extrae diferentes perfiles de sabor del mismo grano.
+                    En este artículo te explicamos las diferencias clave para que
+                    encuentres tu método ideal.
+                </p>
+
+                <a href="#">Leer artículo completo →</a>
+            </article>
+
+            <article>
+                <header>
+                    <h3>El origen de nuestros granos: Finca La Esperanza</h3>
+
+                    <p>
+                        <time datetime="2026-05-15">15 de mayo de 2026</time> |
+                        Autor: María Tostadora
+                    </p>
+                </header>
+
+                <p>
+                    Este mes visitamos la finca La Esperanza en Huila, Colombia.
+                    Conocimos a Doña Rosa, quien cultiva café orgánico desde hace
+                    40 años. Te contamos su historia y por qué elegimos sus granos
+                    para nuestro blend de la casa.
+                </p>
+
+                <a href="#">Leer artículo completo →</a>
+            </article>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto y Reservas</h2>
+
+            <p>
+                ¿Tienes alguna pregunta o quieres reservar una mesa?
+                Estamos aquí para ayudarte.
+            </p>
+
+            <address>
+                <p> Carrer de Mallorca, 245, 08008 Barcelona</p>
+                <p> +34 931 234 567</p>
+                <p> hola@rincondelcafe.com</p>
+            </address>
+
+            <h3>Horario</h3>
+
+            <p>Lunes a Viernes: 7:30 - 21:00</p>
+            <p>Sábados y Domingos: 8:30 - 22:00</p>
+        </section>
+
+    </main>
+
+    <aside>
+        <h2> Oferta de la Semana</h2>
+
+        <p>
+            ¡Lleva tu taza reutilizable y obtén un 10% de descuento en todas tus bebidas!
+            Cuidamos el planeta mientras disfrutamos del mejor café.
+        </p>
+
+        <p><strong>Vigencia:</strong> Promoción válida hasta el 7 de junio de 2026.</p>
+    </aside>
+
+    <footer>
+        <p>El Rincón del Café &copy; 2026. Todos los derechos reservados.</p>
+
+        <p>
+            <a href="#">Política de privacidad</a> |
+            <a href="#">Términos de uso</a> |
+            <a href="#">Trabaja con nosotros</a>
+        </p>
+
+        <p>
+            Instagram · Facebook · TikTok
+        </p>
+    </footer>
+
+</body>
+
+</html>

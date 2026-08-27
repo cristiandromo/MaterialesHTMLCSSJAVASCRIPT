@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario Ejemplo 2026</title>
+</head>
+<body>
+  <form>
+    <p>
+      <label for="usuario">Nombre de usuario:</label><br>
+      <input type="text" id="usuario" name="usuario" 
+             autocomplete="username" 
+             minlength="3" maxlength="20" 
+             required>
+    </p>
+
+    <p>
+      <label for="correo">Correo electrónico:</label><br>
+      <input type="email" id="correo" name="correo" 
+             autocomplete="email" 
+             required>
+    </p>
+
+    <p>
+      <label for="nacimiento">Fecha de nacimiento:</label><br>
+      <input type="date" id="nacimiento" name="nacimiento" 
+             max="2010-12-31" 
+             required>
+    </p>
+
+    <p>
+      <label for="color">Color favorito:</label><br>
+      <input type="color" id="color" name="color" value="#3366ff">
+    </p>
+
+    <p>
+      <label for="codigo">Código de verificación (6 dígitos):</label><br>
+      <input type="text" id="codigo" name="codigo" 
+             inputmode="numeric" 
+             autocomplete="one-time-code" 
+             pattern="[0-9]{6}" 
+             maxlength="6" 
+             title="Debe contener exactamente 6 dígitos"
+             required>
+    </p>
+
+    <p>
+      <label for="lenguaje">Lenguaje de programación:</label><br>
+      <input list="lenguajes" id="lenguaje" name="lenguaje">
+      <datalist id="lenguajes">
+        <option value="Python">
+        <option value="JavaScript">
+        <option value="HTML/CSS">
+        <option value="Scratch">
+        <option value="Otro">
+      </datalist>
+    </p>
+
+    <p>
+      <button type="submit">Enviar</button>
+      <button type="reset">Borrar</button>
+    </p>
+  </form>
+</body>
+</html>
