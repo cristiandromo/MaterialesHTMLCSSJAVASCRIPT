@@ -1,0 +1,56 @@
+
+#container {
+  display: flex;
+
+  /* EJE PRINCIPAL (Dirección del flujo) */
+  flex-direction: row;            /* Default: horizontal izq -> der */
+  flex-direction: row-reverse;    /* Horizontal der -> izq */
+  flex-direction: column;         /* Vertical arriba -> abajo */
+  flex-direction: column-reverse; /* Vertical abajo -> arriba */
+
+  /* SALTO DE LÍNEA */
+  flex-wrap: nowrap;              /* Default: fuerza todo en una sola línea */
+  flex-wrap: wrap;                /* Pasa elementos a la siguiente fila/columna */
+  flex-wrap: wrap-reverse;        /* Salta líneas en sentido inverso */
+
+  /* ATAJO (direction + wrap) */
+  flex-flow: row wrap;            /* flex-flow: <direction> <wrap>; */
+
+  /* ALINEACIÓN EN EJE PRINCIPAL */
+  justify-content: flex-start;    /* Al inicio del eje */
+  justify-content: flex-end;      /* Al final del eje */
+  justify-content: center;        /* Centrado */
+  justify-content: space-between; /* Extremos pegados a bordes, espacio al medio */
+  justify-content: space-around;  /* Mismo espacio alrededor de cada elemento */
+
+  /* ALINEACIÓN EN EJE TRANSVERSAL (Línea individual) */
+  align-items: stretch;           /* Default: se estiran para llenar */
+  align-items: flex-start;        /* Al borde superior/inicial */
+  align-items: flex-end;          /* Al borde inferior/final */
+  align-items: center;            /* Centrado transversal */
+  align-items: baseline;          /* Alineado a la base del texto */
+
+  /* ESPACIADO EN EJE TRANSVERSAL (Solo si hay wrap / múltiples líneas) */
+  align-content: stretch;         /* Default: filas se estiran uniformemente */
+  align-content: flex-start;      /* Todas las líneas agrupadas arriba */
+  align-content: flex-end;        /* Todas las líneas agrupadas abajo */
+  align-content: center;          /* Todas las líneas agrupadas al centro */
+  align-content: space-between;   /* Líneas externas pegadas, espacio al centro */
+  align-content: space-around;    /* Espacio parejo alrededor de cada fila */
+}
+
+/* ----------------------------------------------------------
+   2. ELEMENTOS HIJOS
+   ---------------------------------------------------------- */
+.item {
+  /* ORDEN VISUAL */
+  order: 0;                       /* Default: 0. Acepta negativos (-1 va primero) */
+
+  /* SOBRESCRIBIR ALINEACIÓN INDIVIDUAL (Ignora el align-items del padre) */
+  align-self: auto;               /* Hereda align-items del contenedor */
+  align-self: flex-start;         /* Este item va al inicio transversal */
+  align-self: flex-end;           /* Este item va al final transversal */
+  align-self: center;             /* Este item se centra */
+  align-self: baseline;           /* Alinea con la línea base */
+  align-self: stretch;            /* Se estira solo este elemento */
+}

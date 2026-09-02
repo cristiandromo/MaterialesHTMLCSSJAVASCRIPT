@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notas de Funciones en Python</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --panel: #111827;
+            --card: #1f2937;
+            --accent: #38bdf8;
+            --accent-2: #34d399;
+            --text: #e5e7eb;
+            --muted: #cbd5e1;
+            --warning: #fbbf24;
+            --danger: #f87171;
+            --shadow: rgba(0, 0, 0, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #111827 50%, #1e293b);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 32px 20px 60px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #f8fafc;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--muted);
+            margin-bottom: 28px;
+        }
+
+        .card {
+            background: rgba(31, 41, 55, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            border-radius: 14px;
+            padding: 22px 20px;
+            margin-bottom: 22px;
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        ul {
+            margin: 10px 0 0 18px;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        code,
+        pre {
+            font-family: "Courier New", Courier, monospace;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 8px;
+        }
+
+        pre {
+            padding: 14px 16px;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            color: #dbeafe;
+            margin: 12px 0 0;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 10px;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .warning {
+            color: var(--warning);
+            font-weight: bold;
+        }
+
+        .good {
+            color: var(--accent-2);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Notas de Funciones en Python</h1>
+        <p class="subtitle">Resumen útil para repasar antes del examen.</p>
+
+        <div class="card">
+            <div class="tag">Concepto principal</div>
+            <h2>¿Qué es una función?</h2>
+            <p>Una función es un bloque de código reutilizable que realiza una tarea específica. Se define una vez y se
+                puede llamar muchas veces.</p>
+            <pre>def nombre_funcion(parametros):
+    # bloque de código
+    return resultado</pre>
+            <ul>
+                <li><strong>def</strong>: palabra clave para definir la función.</li>
+                <li><strong>nombre_funcion</strong>: nombre que usamos para invocarla.</li>
+                <li><strong>parámetros</strong>: datos que recibe la función.</li>
+                <li><strong>return</strong>: devuelve un valor al programa principal.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="tag">Ejemplo básico</div>
+            <h2>Función sin parámetros</h2>
+            <pre>def pintar_cuadrado():
+    print("""
+    * * * *
+    *     *
+    * * * *
+    """)
+
+pintar_cuadrado()</pre>
+            <p>Se usa cuando la función no necesita recibir información. Solo ejecuta una acción.</p>
+        </div>
+
+        <div class="card">
+            <div class="tag">Funciones con parámetros</div>
+            <h2>Pasar información</h2>
+            <pre>def suma(num1, num2):
+    r = num1 + num2
+    print(r)
+
+suma(5, 3)</pre>
+            <ul>
+                <li>Los parámetros sirven para recibir valores.</li>
+                <li>La función puede trabajar con esos valores y devolver resultados.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="tag">Operaciones</div>
+            <h2>Funciones para cálculos</h2>
+            <pre>def suma(num1, num2):
+    return num1 + num2
+
+def resta(num1, num2):
+    return num1 - num2</pre>
+            <p>Cuando se usa <strong>return</strong>, la función entrega un valor que se puede guardar en una variable o
+                imprimir.</p>
+        </div>
+
+        <div class="card">
+            <div class="tag">Importante</div>
+            <h2>Parámetros por posición y por nombre</h2>
+            <pre>def resta(num1, num2):
+    return num1 - num2
+
+print(resta(5, 4))
+print(resta(num1=5, num2=4))</pre>
+            <ul>
+                <li><span class="good">Por posición</span>: el orden importa.</li>
+                <li><span class="good">Por nombre</span>: se indica el nombre del argumento.</li>
+                <li>Esto es útil cuando hay muchos parámetros.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="tag">Parámetros por defecto</div>
+            <h2>Valores predeterminados</h2>
+            <pre>def suma(a, b, c=8):
+    return a + b + c
+
+print(suma(5, 5, 3))
+print(suma(4, 3))</pre>
+            <p>Si no se pasa un valor para <strong>c</strong>, Python usa el valor por defecto.</p>
+            <p class="warning">Los argumentos por defecto se escriben al final.</p>
+        </div>
+
+        <div class="card">
+            <div class="tag">*args</div>
+            <h2>Argumentos variables</h2>
+            <pre>def suma(*args):
+    total = 0
+    for i in args:
+        total += i
+    return total
+
+print(suma(5, 8))
+print(suma(5, 8, 1, 2, 3))</pre>
+            <ul>
+                <li><strong>*args</strong> recibe varios valores en una tupla.</li>
+                <li>Se usa cuando no sabemos cuántos datos entrarán.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="tag">**kwargs</div>
+            <h2>Argumentos con nombre</h2>
+            <pre>def datos_personales(**kwargs):
+    for clave, valor in kwargs.items():
+        print(clave, valor)
+
+datos_personales(nombre='ana', edad=20, correo='a@a.com')</pre>
+            <ul>
+                <li><strong>**kwargs</strong> recibe varios argumentos en formato clave: valor.</li>
+                <li>Se guarda como diccionario.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="tag">Combinación</div>
+            <h2>Parámetros mixtos</h2>
+            <pre>def guardar(nombre, apellido, *args, activo=False, **kwargs):
+    print(nombre)
+    print(apellido)
+    print(activo)
+    print(kwargs)
+
+guardar('ana', 'perea', 1, 2, 3, activo=True, al='yuliano')</pre>
+            <p>El orden recomendado es:</p>
+            <ul>
+                <li>parámetros normales</li>
+                <li>*args</li>
+                <li>parámetros por defecto</li>
+                <li>**kwargs</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="tag">Funciones avanzadas</div>
+            <h2>¿Qué son las funciones avanzadas?</h2>
+            <p>Las funciones avanzadas son funciones que trabajan con datos más complejos: listas, diccionarios, varios
+                argumentos, condiciones internas y estructuras de retorno más elaboradas. No son otra cosa que funciones
+                más flexibles y reutilizables.</p>
+            <ul>
+                <li>Reciben muchos datos sin saber de antemano cuántos son.</li>
+                <li>Permiten filtrar, transformar o preparar información.</li>
+                <li>Pueden devolver un diccionario, una lista o una estructura de datos.</li>
+                <li>Son útiles para crear reportes, menús, validaciones y filtros.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="tag">Ejemplo 1</div>
+            <h2>Función con *args y parámetros opcionales</h2>
+            <pre>def generar_reporte(*producto, descuento=0, moneda="COP", incluir_total=True):
+    resultados = {}
+    cont = 0
+
+    for pro in producto[0]:
+        if descuento == 0 or descuento >= 50:
+            desc = pro["precio"]
+        else:
+            desc = pro["precio"] - (pro["precio"] * (descuento / 100))
+
+        p_retorno = {
+            "nombre": pro["nombre"],
+            "precio": desc,
+            "cantidad": pro["cantidad"],
+            "moneda": moneda,
+        }
+
+        if incluir_total:
+            p_retorno["subtotal"] = desc * pro["cantidad"]
+
+        cont += 1
+        resultados[cont] = p_retorno
+
+    return resultados</pre>
+            <p>En este ejemplo, la función recibe varios productos a la vez, aplica un descuento opcional y genera un
+                reporte con información organizada.</p>
+            <ul>
+                <li><strong>*producto</strong>: acepta varios elementos como una tupla.</li>
+                <li><strong>descuento</strong>: parámetro opcional con valor por defecto.</li>
+                <li><strong>incluir_total</strong>: decide si agrega subtotal o no.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="tag">Ejemplo 2</div>
+            <h2>Filtrado con **kwargs</h2>
+            <pre>def filtrar_estudiantes(estudiantes, **kwargs):
+    lista_filtrada = []
+
+    for est in estudiantes:
+        cumple = True
+
+        for criterio, valor in kwargs.items():
+            if criterio == "ciudad" and est["ciudad"] != valor:
+                cumple = False
+            if criterio == "edad_minima" and est["edad"] < valor:
+                cumple = False
+            if criterio == "nota_minima":
+                if not any(nota >= valor for nota in est["notas"]):
+                    cumple = False
+
+        if cumple:
+            lista_filtrada.append(est)
+
+    return lista_filtrada</pre>
+            <p>Este tipo de función permite aplicar varios filtros al mismo tiempo, sin necesidad de escribir un código
+                separado para cada criterio.</p>
+            <ul>
+                <li><strong>**kwargs</strong> captura criterios como ciudad, nota o edad.</li>
+                <li>Se usa mucho en búsquedas y validaciones.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="tag">Ejemplo 3</div>
+            <h2>Menú dinámico con kwargs</h2>
+            <pre>def construir_menu(prefijo="-", mayusculas=False, **kwargs):
+    salida = []
+
+    for categoria, items in kwargs.items():
+        if mayusculas:
+            categoria = categoria.upper()
+        salida.append(categoria)
+
+        if len(items) == 0:
+            salida.append("[VACÍO]")
+        else:
+            for item in items:
+                salida.append(f"{prefijo} {item}")
+
+    return salida</pre>
+            <p>La función construye un menú sin saber cuántas categorías o elementos tendrá. Esto es típico de funciones
+                avanzadas: generan resultados dinámicos.</p>
+        </div>
+
+        <div class="card">
+            <div class="tag">Concepto clave</div>
+            <h2>¿Por qué son importantes?</h2>
+            <ul>
+                <li>Permiten resolver problemas con datos variables.</li>
+                <li>Hacen que el código sea más limpio y reutilizable.</li>
+                <li>Ayudan a crear soluciones más generales para distintos casos.</li>
+                <li>Son la base de programas más complejos y funciones de librerías.</li>
+            </ul>
+            <p>En resumen, una función avanzada no es “más difícil”, sino que <strong>maneja más variedad de entradas y
+                    produce información más útil y organizada.</strong></p>
+        </div>
+
+        <div class="card">
+            <div class="tag">ADSO - Evidencia</div>
+            <h2>Explicación del PDF: FUNCIONES2</h2>
+            <p>Leí el contenido del documento y corresponde a una evidencia de funciones en Python. La idea principal es
+                construir programas usando funciones para resolver problemas reales y con lógica de validación.</p>
+            <p>Es importante entender que cada ejercicio debe resolverse con funciones separadas, no con todo el código
+                en el main. Eso ayuda a que el programa sea más ordenado, reutilizable y fácil de revisar.</p>
+        </div>
+
+        <div class="card">
+            <div class="tag">Ejercicio del edificio</div>
+            <h2>Explicación del ejercicio de empleados y ubicaciones</h2>
+            <p>Este ejercicio trata de un sistema de registro de empleados en un edificio, donde cada persona tiene
+                nombre,
+                cargo, ID y una ubicación actual (piso y oficina). Luego se pueden mover entre oficinas y se deja un
+                historial de todos los movimientos.</p>
+            <p>La idea central es separar la información en dos diccionarios:</p>
+            <pre>empleados = {
+    "nombre": ["Andrea", "Pedro"],
+    "cargo": ["Gerente", "Contador"],
+    "id": [789, 123]
+}
+
+ubicacion = {
+    "empleado": [789],
+    "piso": [5],
+    "oficina": [1]
+}</pre>
+            <p>Esto significa que cada posición del arreglo corresponde a la misma persona en los tres arreglos. Por
+                ejemplo, el empleado ubicado en la posición 0 es Andrea con ID 789 y está en el piso 5 oficina 1.</p>
+            <h3>Cómo pensar la lógica</h3>
+            <ul>
+                <li>Primero se registran los empleados con una función.</li>
+                <li>Luego se valida que el ID sea único.</li>
+                <li>Cuando un empleado se mueve, el sistema guarda un nuevo registro en <strong>ubicacion</strong>.</li>
+                <li>Para saber el último lugar, se busca el último movimiento del empleado.</li>
+                <li>Para saber todo el historial, se recorren todos los registros y se filtran por ese ID.</li>
+            </ul>
+            <pre>def registrar_empleado(nombre, cargo, id_empleado):
+    empleados["nombre"].append(nombre)
+    empleados["cargo"].append(cargo)
+    empleados["id"].append(id_empleado)</pre>
+            <p>La función registrar empleado no hace operaciones complejas: solo agrega la información a las listas.</p>
+            <pre>def mover_empleado(id_empleado, piso, oficina):
+    if id_empleado in empleados["id"]:
+        ubicacion["empleado"].append(id_empleado)
+        ubicacion["piso"].append(piso)
+        ubicacion["oficina"].append(oficina)</pre>
+            <p>El truco aquí es que no se reemplaza el lugar, sino que se agrega un nuevo movimiento. Así queda el
+                historial completo.</p>
+            <h3>Cómo sacar el último lugar</h3>
+            <pre>def ultimo_lugar(id_empleado):
+    for i in range(len(ubicacion["empleado"]) - 1, -1, -1):
+        if ubicacion["empleado"][i] == id_empleado:
+            return ubicacion["piso"][i], ubicacion["oficina"][i]
+    return "No tiene movimientos"</pre>
+            <p>Este patrón es importante: recorrer la lista <strong>al revés</strong> para obtener el último registro.
+            </p>
+            <h3>Cómo sacar todo el historial</h3>
+            <pre>def historial_empleado(id_empleado):
+    historial = []
+    for i in range(len(ubicacion["empleado"])):
+        if ubicacion["empleado"][i] == id_empleado:
+            historial.append((ubicacion["piso"][i], ubicacion["oficina"][i]))
+    return historial</pre>
+            <p>Si el empleado nunca se movió, la lista resulta vacía, y entonces puedes mostrar: “No tiene movimientos”.
+            </p>
+            <h3>Menú del sistema</h3>
+            <pre>while True:
+    print("1. Registrar empleado")
+    print("2. Mover empleado")
+    print("3. Ver último lugar")
+    print("4. Ver historial")
+    print("5. Salir")
+    op = int(input("Opción: "))</pre>
+            <p>La idea del menú es muy simple: cada opción llama a una función distinta y siempre repite hasta que el
+                usuario
+                salga.</p>
+            <h3>Trucos para estudiar mejor</h3>
+            <ul>
+                <li>Identifica primero las dos estructuras principales: <strong>empleados</strong> y
+                    <strong>ubicacion</strong>.</li>
+                <li>Piensa en “índices”: cada elemento en una lista representa la misma persona en otra lista.</li>
+                <li>Cuando necesites el último movimiento, escanea desde el final hacia el inicio.</li>
+                <li>Cuando necesites historial, recorre todo el diccionario y filtra por ID.</li>
+                <li>Usa funciones pequeñas: registrar, mover, ultimo_lugar, historial.</li>
+                <li>Valida primero si el empleado existe antes de moverlo.</li>
+                <li>Haz ejercicios con papel: dibuja las listas y sigue qué índice corresponde a cada persona.</li>
+            </ul>
+            <p><span class="warning">Regla de oro:</span> no intentes resolver todo en una sola función. Divide el
+                problema en registrar, mover y reportar. Eso es lo que hace que el ejercicio sea entendible y se vea
+                “claro” para la sustentación.</p>
+        </div>
+
+        <div class="card">
+            <div class="tag">Ejercicio 1</div>
+            <h2>Contar y guardar números primos del 0 al N</h2>
+            <p>Este ejercicio pide: “calcular cuántos primos hay desde el 0 hasta N” y guardar esos primos en una lista.
+            </p>
+            <pre>def es_primo(num):
+    if num &lt; 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def primos_hasta_n(n):
+    primos = []
+    for i in range(0, n + 1):
+        if es_primo(i):
+            primos.append(i)
+    return primos</pre>
+            <ul>
+                <li>La clave es crear una función <strong>es_primo()</strong>.</li>
+                <li>Luego otra función que recorra desde 0 hasta N.</li>
+                <li>Se guarda cada primo en una lista.</li>
+                <li>Al final se imprime la lista y la cantidad de primos.</li>
+            </ul>
+            <p><span class="warning">Idea clave:</span> un número primo solo es divisible entre 1 y sí mismo; por eso se
+                prueba hasta la raíz cuadrada.</p>
+        </div>
+
+        <div class="card">
+            <div class="tag">Ejercicio 2</div>
+            <h2>Revisar si una lista de números es primo o no</h2>
+            <p>Este ejercicio pide revisar una lista ingresada por el usuario y separar los números en dos grupos:</p>
+            <ul>
+                <li><strong>primos</strong></li>
+                <li><strong>no_primos</strong></li>
+            </ul>
+            <pre>def es_primo(num):
+    if num &lt; 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def clasificar_numeros(lista):
+    primos = []
+    no_primos = []
+
+    for num in lista:
+        if es_primo(num):
+            primos.append(num)
+        else:
+            no_primos.append(num)
+
+    return {"primos": primos, "no_primos": no_primos}</pre>
+            <p>Se usa un diccionario para guardar dos listas. Eso responde al enunciado: <strong>clave "primos"</strong>
+                y <strong>clave "no_primos"</strong>.</p>
+            <p>Es una versión más organizada del ejercicio 1 porque además de verificar, clasifica la información.</p>
+        </div>
+
+        <div class="card">
+            <div class="tag">Ejercicio 3</div>
+            <h2>Simulación de Tienda Virtual</h2>
+            <p>Este es el ejercicio más importante del PDF. La tienda tiene 3 productos:</p>
+            <ul>
+                <li>Camisa: precio 5000, existencia 10</li>
+                <li>Pantalón: precio 7000, existencia 5</li>
+                <li>Traje: precio 10000, existencia 82</li>
+            </ul>
+            <p>El cliente debe registrar nombre, apellido, edad y dinero. Sólo pueden comprar si son mayores de edad.
+            </p>
+            <h3>Funciones que se piden</h3>
+            <ul>
+                <li><strong>comprarProducto()</strong>: disminuye inventario y resta dinero.</li>
+                <li><strong>devolverProductoDefectuoso()</strong>: aumenta defectuosos y devuelve dinero al cliente.
+                </li>
+                <li><strong>mostrarEstadoTienda()</strong>: imprime productos, existencias y defectuosos.</li>
+                <li><strong>mostrarEstadoCliente()</strong>: muestra dinero disponible y última acción.</li>
+            </ul>
+            <pre>productos = [
+    ["camisa", 5000, 10, 0],
+    ["pantalon", 7000, 5, 0],
+    ["traje", 10000, 82, 0]
+]
+
+def comprar_producto(cual, cantidad, dinero):
+    costo = productos[cual][1] * cantidad
+    if cantidad &lt;= productos[cual][2] and dinero &gt;= costo:
+        productos[cual][2] -= cantidad
+        dinero -= costo
+        return dinero, "Comprar"
+    return dinero, "No se pudo comprar"</pre>
+            <p>La lógica principal es:</p>
+            <ul>
+                <li>mostrar inventario</li>
+                <li>preguntar qué desea comprar</li>
+                <li>validar si hay stock</li>
+                <li>restar costo al dinero</li>
+                <li>guardar la última acción</li>
+            </ul>
+            <p><span class="good">Regla clave:</span> sólo puede devolver un producto si la acción anterior fue comprar.
+                Eso se controla con una variable como <strong>ultima_accion</strong>.</p>
+        </div>
+
+        <div class="card">
+            <div class="tag">Ejercicio 4</div>
+            <h2>Simulación de banco</h2>
+            <p>Este ejercicio crea tres clientes y les permite hacer operaciones bancarias mediante funciones.</p>
+            <ul>
+                <li>depositarDinero()</li>
+                <li>retirarDinero()</li>
+                <li>transferirDinero()</li>
+                <li>comprar()</li>
+                <li>mostrarSaldo()</li>
+            </ul>
+            <pre>clientes = {
+    "cliente1": {"nombre": "Ana", "cuenta": 101, "saldo": 0},
+    "cliente2": {"nombre": "Luis", "cuenta": 102, "saldo": 0},
+    "cliente3": {"nombre": "Sara", "cuenta": 103, "saldo": 0}
+}
+
+def depositar_dinero(cliente, valor):
+    clientes[cliente]["saldo"] += valor
+
+
+def retirar_dinero(cliente, valor):
+    if clientes[cliente]["saldo"] >= valor:
+        clientes[cliente]["saldo"] -= valor</pre>
+            <p>Las validaciones más importantes son:</p>
+            <ul>
+                <li>No se puede comprar si el producto cuesta más que el saldo.</li>
+                <li>No puede retirar si el saldo está en cero.</li>
+                <li>No puede retirar más de lo que tiene.</li>
+                <li>La cuenta no puede quedar en saldo negativo.</li>
+                <li>Los productos deben costar más de 5000.</li>
+            </ul>
+            <p>La lógica del menú es cíclica: se le pregunta al usuario con cuál cliente va a trabajar y luego qué
+                operación desea realizar. Cuando sale, se muestran los clientes y sus saldos.</p>
+        </div>
+
+        <div class="card">
+            <div class="tag">Cómo resolverlo bien</div>
+            <h2>Orden recomendado para entregar la evidencia</h2>
+            <ul>
+                <li>Definir la estructura principal de datos.</li>
+                <li>Crear funciones pequeñas y específicas.</li>
+                <li>Usar validaciones con <strong>if</strong> y <strong>while</strong>.</li>
+                <li>Mostrar resultados con <strong>print()</strong>.</li>
+                <li>Usar <strong>return</strong> para devolver valores.</li>
+                <li>Guardar las variables en listas o diccionarios.</li>
+            </ul>
+            <p>La evaluación no busca solo “que funcione”, sino que la lógica esté organizada y cada función responda a
+                una tarea concreta.</p>
+        </div>
+
+        <div class="card">
+            <div class="tag">Estructura guía</div>
+            <h2>Patrón de programas con funciones</h2>
+            <pre># zona de importaciones
+# zona de definición de funciones
+# variables globales
+
+if __name__ == "__main__":
+    # algoritmo principal
+    pass</pre>
+            <p>Es una buena práctica organizar el programa en secciones para que sea más claro.</p>
+        </div>
+
+        <div class="card">
+            <div class="tag">Ejemplo aplicado</div>
+            <h2>Funciones para una tienda</h2>
+            <pre>def comprar_producto(cual, cantidad, dinero, ultima_accion):
+    if cantidad > 0:
+        costo = cantidad * productos[cual][1]
+        if dinero >= costo:
+            productos[cual][2] -= cantidad
+            dinero -= costo
+            ultima_accion = "Comprar"
+    return [dinero, ultima_accion]</pre>
+            <p>Este ejemplo muestra cómo una función puede actualizar datos y retornar información útil al programa
+                principal.</p>
+        </div>
+
+        <div class="card">
+            <div class="tag">Resumen</div>
+            <h2>Puntos clave para el examen</h2>
+            <ul>
+                <li>Una función sirve para reutilizar código.</li>
+                <li>Se define con <strong>def</strong>.</li>
+                <li>Pueden recibir parámetros y devolver resultados con <strong>return</strong>.</li>
+                <li>Los argumentos por posición y por nombre son importantes.</li>
+                <li>Los valores por defecto facilitan el uso de funciones.</li>
+                <li><strong>*args</strong> permite recibir varios valores.</li>
+                <li><strong>**kwargs</strong> recibe nombre y valor.</li>
+                <li>Las funciones ayudan a organizar un programa.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="tag">Truco</div>
+            <h2>Cómo estudiar esta carpeta</h2>
+            <ul>
+                <li>Revisa cada archivo: fundamentos.py, fundamentos2.py, parametros_defecto.py, parametros_desorden.py,
+                    parametros_arbitrarios.py, parametros_arbitrarios_palabra_clave.py.</li>
+                <li>Identifica si usa parámetros, return, *args, **kwargs o argumentos por nombre.</li>
+                <li>Practica escribiendo una función nueva con cada tipo.</li>
+                <li>Haz ejercicios de prueba mental: ¿qué devuelve la función? ¿qué imprime?</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

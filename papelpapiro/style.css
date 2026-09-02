@@ -29,7 +29,9 @@ p {
     padding: clamp(2rem, 7vw, 5rem) clamp(1.25rem, 8vw, 6rem);
     font-size: 37px;
     text-align: justify;
-
+    text-transform: uppercase;
+    word-spacing: 20px;
+    letter-spacing: 3px;
 }
 
 p::first-letter {
