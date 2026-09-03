@@ -54,3 +54,5 @@
   align-self: baseline;           /* Alinea con la línea base */
   align-self: stretch;            /* Se estira solo este elemento */
 }
+
+
